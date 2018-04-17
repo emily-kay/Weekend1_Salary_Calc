@@ -22,8 +22,11 @@ function clickHandler() {
 
     clickCount++;
     totalBudget();
+    if($('#newFirstName').val() === ''||$('#newLastName').val() === ''||$('#newID').val() === ''||$('#newTitle').val() === ''||$('#newAnnualSalary').val() === ''){
+        return alert('You must complete all fields.');
+    }
     allEmployees();
-    $('input').val('');
+    $('input').val(''); // make sure it's '' not ' ' because '' puts it back to the placeholder while ' ' would make the input fields hold a blank space
 
 }//end clickHandler
 
@@ -38,3 +41,11 @@ function totalBudget(){
     }
     
 }//end totalBudget
+
+// let salary = $('#newAnnualSalary').val()/12;
+// expenses.push(salary.toFixed(2));
+// console.log(expenses);
+// for (let allEmployees of listOfEmployees) {
+//     expenses += salary;
+    
+// }
